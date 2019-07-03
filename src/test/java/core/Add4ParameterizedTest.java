@@ -14,7 +14,7 @@ import org.junit.runners.Parameterized.Parameters;
 
 public class Add4ParameterizedTest {
 	
-	@Parameters(name = "Parameter # {index}: + {1} + {2} = {0}")
+	@Parameters(name = "Parameter # {index}: {1} + {2} = {0}")
 	
 	public static Collection<Double[]>addNumbers() {
 		

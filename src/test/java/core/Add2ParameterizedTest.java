@@ -14,7 +14,7 @@ import org.junit.runners.Parameterized.Parameters;
 
 public class Add2ParameterizedTest {
 	
-	@Parameters(name = "Parameter # {index}: + {1} + {2} = {0}")
+	@Parameters(name = "Parameter # {index}: {1} + {2} = {0}")
 	
 	public static Collection<Double[]>addNumbers() {
 		
@@ -40,7 +40,7 @@ public class Add2ParameterizedTest {
 	@Test
 	
 	public void add() {
-		System.out.println(first + " + " + second + " + " + expected);
+		System.out.println(first + " + " + second + " = " + expected);
 		
 		assertEquals("Not correct", Calculator.add(first, second), expected, 0.09);
 		

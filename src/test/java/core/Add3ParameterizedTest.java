@@ -14,7 +14,7 @@ import org.junit.runners.Parameterized.Parameters;
 
 public class Add3ParameterizedTest {
 	
-	@Parameters(name = "Parameter # {index}: + {1} + {2} = {0}")
+	@Parameters(name = "Parameter # {index}: {1} + {2} = {0}")
 	
 	public static Collection<Double[]>addNumbers() {
 		
@@ -44,7 +44,7 @@ public class Add3ParameterizedTest {
 	@Test
 	
 	public void add() {
-		System.out.println(first + " + " + second + " + " + third + " + " + expected);
+		System.out.println(first + " + " + second + " + " + third + " = " + expected);
 		
 		assertEquals("Not correct", Calculator.add(first, second, third), expected, 0.09);
 		
