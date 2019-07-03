@@ -39,7 +39,7 @@ public class Add2ParameterizedTest {
 	
 	@Test
 	
-	public void multiply() {
+	public void add() {
 		System.out.println(first + " + " + second + " + " + expected);
 		
 		assertEquals("Not correct", Calculator.add(first, second), expected, 0.09);

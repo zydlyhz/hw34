@@ -14,16 +14,20 @@ import org.junit.runners.Parameterized.Parameters;
 
 public class Divide2ParameterizedTest {
 	
-	@Parameters(name = "Parameter # {index}: + {1} + {2} = {0}")
+	@Parameters(name = "Parameter # {index}: {1} / {2} = {0}")
 	
 	public static Collection<Double[]>divideNumbers() {
 		
 		return Arrays.asList(new Double[][] {
 			
-			{3.0,1.0,2.0},  // { 0.5, 1.0, 2.0 }, 
-			{5.0,2.0,3.0},  // { 0.66, 2.0, 3.0 }, 
-			{7.0,3.0,4.0}, //  { 0.75, 3.0, 4.0 }, 
-			{9.0,4.0,5.0} //  { 0.8, 4.0, 5.0 },
+			// {3.0,1.0,2.0},   
+			// {5.0,2.0,3.0},  
+			// {7.0,3.0,4.0},   
+			// {9.0,4.0,5.0},  
+			{ 0.5, 1.0, 2.0 },
+			{ 0.66, 2.0, 3.0 },
+			{ 0.75, 3.0, 4.0 },
+			{ 0.8, 4.0, 5.0 },
 		});
 	}
 	
@@ -39,8 +43,8 @@ public class Divide2ParameterizedTest {
 	
 	@Test
 	
-	public void multiply() {
-		System.out.println(first + " + " + second + " + " + expected);
+	public void divide() {
+		System.out.println(first + " / " + second + " = " + expected);
 		
 		assertEquals("Not correct", Calculator.divide(first, second), expected, 0.09);
 		

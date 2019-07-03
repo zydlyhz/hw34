@@ -15,16 +15,16 @@ import org.junit.runners.Parameterized.Parameters;
 
 public class Subtract3ParameterizedTest {
 	
-	@Parameters(name = "Parameter # {index}: + {1} + {2} = {0}")
+	@Parameters(name = "Parameter # {index}: {1} - {2} - {3} = {0}")
 	
 	public static Collection<Double[]>subtractNumbers() {
 		
 		return Arrays.asList(new Double[][] {
 			
-			{3.0,1.0,2.0},  // { 0.5, 1.0, 2.0 }, 
-			{5.0,2.0,3.0},  // { 0.66, 2.0, 3.0 }, 
-			{7.0,3.0,4.0}, //  { 0.75, 3.0, 4.0 }, 
-			{9.0,4.0,5.0} //  { 0.8, 4.0, 5.0 },
+			{1.0,4.0,1.0,2.0},  // { 0.5, 1.0, 2.0 }, 
+			{1.0,5.0,3.0,1.0},  // { 0.66, 2.0, 3.0 }, 
+			{1.0,7.0,3.0,3.0}, //  { 0.75, 3.0, 4.0 }, 
+			{1.0,9.0,6.0,2.0} //  { 0.8, 4.0, 5.0 },
 		});
 	}
 	
@@ -37,13 +37,17 @@ public class Subtract3ParameterizedTest {
 	@Parameter(value = 2) 
 	public Double second;
 	
+	@Parameter(value = 3)
+	public Double third;
+	
+	
 	
 	@Test
 	
 	public void subtract() {
-		System.out.println(first + " - " + second + " = " + expected);
+		System.out.println(first + " - " + second +  " - " + third +  " = " + expected);
 		
-		assertEquals("Not correct", Calculator.subtract(first, second), expected, 0.09);
+		assertEquals("Not correct", Calculator.subtract(first, second, third), expected, 0.09);
 		
 	}
 	
